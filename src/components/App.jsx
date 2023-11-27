@@ -1,6 +1,6 @@
-import { useEffect, lazy } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContactsThunk, refreshUserThunk } from "redux/operations";
+import { refreshUserThunk } from "redux/operations";
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { Navigation } from "./Navigation/Navigation";
@@ -33,16 +33,18 @@ export const App = () => {
                 {registrated ? <UserMenu /> : <AuthMenu />}
             </Header>
             <main>
-                <Routes>
-                    <Route path='/' element={<HomePage />} />
-                    <Route path='/register' element={<RegisterPage />} />
-                    <Route path='/login' element={<LoginPage />} />
-                    <Route path='/contacts' element={
-                        <PrivateRoute redirectTo='/login'>
-                            <ContactsPage />
-                        </PrivateRoute>
-                    } />
-                </Routes>
+                <Suspense fallback={<p>Loading...</p> }>
+                    <Routes>
+                        <Route path='/' element={<HomePage />} />
+                        <Route path='/register' element={<RegisterPage />} />
+                        <Route path='/login' element={<LoginPage />} />
+                        <Route path='/contacts' element={
+                            <PrivateRoute redirectTo='/login'>
+                                <ContactsPage />
+                            </PrivateRoute>
+                        } />
+                    </Routes>
+                </Suspense>
             </main>
         </div>
     );

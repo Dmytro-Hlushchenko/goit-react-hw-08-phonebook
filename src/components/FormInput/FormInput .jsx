@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContactThunk } from 'redux/operations';
 import { SubmitSchema } from './FormInput.styled';
 import { getContacts } from 'redux/selectors';
-import { nanoid } from 'nanoid';
    
 export default function FormInput() {
 
@@ -28,7 +27,6 @@ export default function FormInput() {
     return(
       <Formik
         initialValues={{
-          id: nanoid(),
           name: '',
           number: '',
         }}

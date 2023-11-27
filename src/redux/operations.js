@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { fetchAddContact, fetchAllContacts, fetchDeleteContact } from "../API";
 
 
 
@@ -59,31 +58,34 @@ export const refreshUserThunk = createAsyncThunk('auth/refresh', async (_, thunk
 
 
 export const fetchContactsThunk = createAsyncThunk('contacts/fetchAllContacts',
-async(_, thunkApi)=>{
-    try {
-        const contactsData = await fetchAllContacts();
-        return contactsData;
-    } catch (error) {
-        return thunkApi.rejectWithValue(error.message)
-    }
-})
+    async (_, thunkApi) => {
+
+        try {
+            const { data } = await BASE_URL.get('/contacts');
+            return data;
+
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message)
+        }
+    })
 
 export const addContactThunk = createAsyncThunk('contacts/addContact',
-async(contact, thunkApi)=>{
-    try {
-        const contactsData = await fetchAddContact(contact);
-        return contactsData;
-    } catch (error) {
-        return thunkApi.rejectWithValue(error.message)
-    }
-})
+    async (contact, thunkApi) => {
+        try {
+            const { data } = await BASE_URL.post('/contacts', contact);
+            return data;
 
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message)
+        }
+    })
 export const deleteContactThunk = createAsyncThunk('contacts/deleteContact',
-async(contactId, thunkApi)=>{
-    try {
-        const contactsData = await fetchDeleteContact(contactId);
-        return contactsData;
-    } catch (error) {
-        return thunkApi.rejectWithValue(error.message)
-    }
-})
+    async (contactId, thunkApi) => {
+        try {
+            const { data } = await BASE_URL.delete(`/contacts/${contactId}`);
+            return data;
+
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message)
+        }
+    })
