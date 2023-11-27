@@ -1,4 +1,4 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import { InputFields, AddBtn } from './LoginForm.styled';
 import { SubmitSchema } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import { loginUserThunk } from 'redux/operations';
    
 export default function LoginForm() {
   const dispatch = useDispatch()
-
+    
   const onFormSubmit = data => {
      dispatch(loginUserThunk({
          name: data.name,
