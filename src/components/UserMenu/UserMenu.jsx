@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "redux/selectors";
 import defaultAvatar from "defaulAvatar.png";
 import { logOutUserThunk } from "redux/operations";
+import {ContainerStyled, StyledBtn } from "./UserMenu.styled"
 
 
 export default function UserMenu() {
@@ -14,9 +15,9 @@ export default function UserMenu() {
 }
    
     return (
-        <div>
+        <ContainerStyled>
             <img src={avatar} width="56" alt="" />
             <p>Welcome, {name.name}</p>
-            <button onClick={handleLogOut} >Logout</button>
-    </div>)
+            <StyledBtn onClick={handleLogOut} >Logout</StyledBtn>
+        </ContainerStyled>)
 };

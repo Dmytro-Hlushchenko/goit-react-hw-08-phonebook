@@ -6,7 +6,7 @@ import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { Navigation } from "./Navigation/Navigation";
 import  AuthMenu  from "./AuthMenu/";
 import UserMenu from "./UserMenu/";
-import { Header } from "./App.styled";
+import { AppStyled, HeaderStyled } from "./App.styled";
 import { selectRegistrated, selectToken } from "redux/selectors";
 
 
@@ -27,11 +27,11 @@ export const App = () => {
   }, [token, dispatch, registrated]);
 
     return (
-        <div>
-            <Header>
+        <AppStyled>
+            <HeaderStyled>
                 <Navigation />
                 {registrated ? <UserMenu /> : <AuthMenu />}
-            </Header>
+            </HeaderStyled>
             <main>
                 <Suspense fallback={<p>Loading...</p> }>
                     <Routes>
@@ -46,6 +46,6 @@ export const App = () => {
                     </Routes>
                 </Suspense>
             </main>
-        </div>
+        </AppStyled>
     );
 };
