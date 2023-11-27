@@ -1,5 +1,5 @@
 import ContactsList from "components/ContactsList";
-// import { Filter } from "components/Filter/Filter";
+import Filter from "components/Filter/";
 import FormInput from "components/FormInput";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,7 +8,7 @@ import { getFilter, selectRegistrated} from "redux/selectors";
 
 
 export default function ContactsPage() {
-//   const filter = useSelector(getFilter);
+    const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   const registrated = useSelector(selectRegistrated)
 
@@ -22,7 +22,7 @@ export default function ContactsPage() {
       <p>Phonebook</p>
       <FormInput />
       <p>Contacts</p>
-      {/* <Filter filter={filter} /> */}
+      {<Filter filter={filter} />}
       <ContactsList />
     </div>
   )
