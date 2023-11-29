@@ -1,5 +1,5 @@
 import { getContacts, getError, getFilter, getLoading } from "redux/selectors";
-import { List, Item, DeleteBtn } from "./ContactList.styled"
+import { StyledContactList, StyledContactItem, StyledDeleteBtn } from "./ContactList.styled"
 import { useSelector, useDispatch } from "react-redux";
 import { deleteContactThunk } from "redux/operations";
 
@@ -20,19 +20,19 @@ export default function ContactsList () {
     
 return(
     <div>
-        <List>
+        <StyledContactList>
             {isLoading && !error && <b>  Loading...</b>}
             {error && <p>{error.message}</p>}
             {filteredContacts().map(item => (
-                <Item key={item.id}>
+                <StyledContactItem key={item.id}>
                         <p>{item.name} {item.number} </p>
-                        <DeleteBtn 
+                        <StyledDeleteBtn 
                         onClick={() => dispatch(deleteContactThunk(item.id))}
                         >Delete
-                        </DeleteBtn>
-                </Item>
+                        </StyledDeleteBtn>
+                </StyledContactItem>
             ))}
-        </List>
+        </StyledContactList>
     </div>
     )
 };

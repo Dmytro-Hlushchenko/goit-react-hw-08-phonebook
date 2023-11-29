@@ -1,5 +1,5 @@
 import { Formik, Field, Form } from 'formik';
-import { InputFields, AddBtn } from './LoginForm.styled';
+import { InputFields, StyledLoginBtn, StyledLoginFormLabel } from './LoginForm.styled';
 import { SubmitSchema } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
 import { loginUserThunk } from 'redux/operations';
@@ -32,17 +32,17 @@ export default function LoginForm() {
       >
         <Form>
           <InputFields>
-            <label>e-mail:
-            <Field 
+            <StyledLoginFormLabel>e-mail:
+            <Field
               name="email"
               placeholder="enter your e-mail"/>
-            </label>
-            <label>password:
-            <Field 
+            </StyledLoginFormLabel>
+            <StyledLoginFormLabel>password:
+            <Field
               name="password"
               placeholder="enter your password"/>
-            </label>
-            <AddBtn type="submit">Log in</AddBtn>
+            </StyledLoginFormLabel>
+            <StyledLoginBtn type="submit">Log in</StyledLoginBtn>
           </InputFields>
         </Form> 
     </Formik>

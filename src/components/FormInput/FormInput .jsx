@@ -1,5 +1,5 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
-import { InputFields, AddBtn } from './FormInput.styled';
+import { InputFields, StyledBtn, StyledLabel } from './FormInput.styled';
 import { useDispatch, useSelector } from "react-redux";
 import { addContactThunk } from 'redux/operations';
 import { SubmitSchema } from './FormInput.styled';
@@ -39,20 +39,20 @@ export default function FormInput() {
       >
         <Form>
           <InputFields>
-            <label>Name:
+            <StyledLabel>Name:
             <Field 
               name="name"
               placeholder="Jane"/>
               <ErrorMessage name="name" />
-            </label>
-            <label>Number:
+            </StyledLabel>
+            <StyledLabel>Number:
             <Field 
               name="number"
               placeholder="658-58-69"
               type="tel"/>
               <ErrorMessage name="number" />
-            </label>
-            <AddBtn type="submit">Add contact</AddBtn>
+            </StyledLabel>
+            <StyledBtn type="submit">Add contact</StyledBtn>
           </InputFields>
         </Form> 
     </Formik>
