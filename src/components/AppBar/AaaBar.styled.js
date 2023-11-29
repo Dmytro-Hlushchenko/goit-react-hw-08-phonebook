@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export const AppStyled = styled.div`
- margin: 0 auto; 
- padding-bottom: 25px; 
- height: 100vh; 
-`;
-
-export const HeaderStyled = styled.header`
+export const StyledHeader = styled.header`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,22 +24,24 @@ export const HeaderStyled = styled.header`
     justify-content: space-between;
   }
   
+
 .NavLink{
-     display: inline-block;
+    display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
+        color: black;
         font-size: 18px;
-        font-weight: 700;
-     letter-spacing: 0.5px;
-     margin-left: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-left: 20px;
 
-     @media screen and (min-width: 480px){
-       font-size: 17px;
-     font-weight: 700;
-     }
+    @media screen and (min-width: 480px){
+      font-size: 17px;
+    font-weight: 700;
+    }
     
-     }
-     .NavLink.active{
-       color: blue;
-     }
+    }
+    .NavLink.active{
+      color: blue;
+    }
 `

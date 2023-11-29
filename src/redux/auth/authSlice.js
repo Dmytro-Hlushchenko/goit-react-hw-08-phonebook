@@ -7,7 +7,8 @@ export const initialState = {
     isLoading: false,
     error: null,
     token: null,
-    registrated: false
+    registrated: false,
+    isRefreshing: false,
 
 }
 
@@ -44,19 +45,26 @@ const authSlice = createSlice({
       .addCase(loginUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        state.registrated = false;
       })
        .addCase(refreshUserThunk.pending, state => {
         state.isLoading = true;
-        state.error = null;
+         state.error = null;
+         state.isRefreshing = true;
+         
       })
       .addCase(refreshUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.registrated = true;
         state.user = action.payload;
+        state.isRefreshing = false;
+        
       })
       .addCase(refreshUserThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload;
+        state.isRefreshing = false;
+        
       })
       .addCase(logOutUserThunk.pending, state => {
         state.isLoading = true;

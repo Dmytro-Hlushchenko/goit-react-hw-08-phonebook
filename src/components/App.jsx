@@ -1,13 +1,11 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect, lazy} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { refreshUserThunk } from "redux/operations";
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
-import { Navigation } from "./Navigation/Navigation";
-import  AuthMenu  from "./AuthMenu/";
-import UserMenu from "./UserMenu/";
-import { AppStyled, HeaderStyled } from "./App.styled";
-import { selectRegistrated, selectToken } from "redux/selectors";
+import { selectIsRefreshing } from "redux/selectors";
+import { Layout } from "./Layout";
+import { RestrictedRoute } from "./RestrictedRoute/RestrictedRoute";
 
 
 const HomePage = lazy(() => import("../pages/HomePage/"));
@@ -17,35 +15,36 @@ const ContactsPage = lazy(() => import("pages/ContactsPage"))
 
 
 export const App = () => {
-    const registrated = useSelector(selectRegistrated);
-    const token = useSelector(selectToken);
+    const isRefreshing = useSelector(selectIsRefreshing);
     const dispatch = useDispatch();
     
      useEffect(() => {
-    if (!token || registrated) return;
     dispatch(refreshUserThunk());
-  }, [token, dispatch, registrated]);
+  }, [dispatch]);
 
-    return (
-        <AppStyled>
-            <HeaderStyled>
-                <Navigation />
-                {registrated ? <UserMenu /> : <AuthMenu />}
-            </HeaderStyled>
-            <main>
-                <Suspense fallback={<p>Loading...</p> }>
-                    <Routes>
-                        <Route path='/' element={<HomePage />} />
-                        <Route path='/register' element={<RegisterPage />} />
-                        <Route path='/login' element={<LoginPage />} />
-                        <Route path='/contacts' element={
-                            <PrivateRoute redirectTo='/login'>
-                                <ContactsPage />
-                            </PrivateRoute>
-                        } />
-                    </Routes>
-                </Suspense>
-            </main>
-        </AppStyled>
-    );
+    return isRefreshing ? (<b>Loading......</b>) : (
+         <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<RegisterPage />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+      </Route>
+    </Routes>
+  );
 };
