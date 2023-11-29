@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.2ddd97dc.js",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.be893b78.js",
     "static/js/35.1d41b843.chunk.js": "/goit-react-hw-08-phonebook/static/js/35.1d41b843.chunk.js",
     "static/js/149.74e5681e.chunk.js": "/goit-react-hw-08-phonebook/static/js/149.74e5681e.chunk.js",
     "static/js/178.3fbf4a70.chunk.js": "/goit-react-hw-08-phonebook/static/js/178.3fbf4a70.chunk.js",
-    "static/js/830.101c1b6d.chunk.js": "/goit-react-hw-08-phonebook/static/js/830.101c1b6d.chunk.js",
+    "static/js/830.fe0d3d24.chunk.js": "/goit-react-hw-08-phonebook/static/js/830.fe0d3d24.chunk.js",
     "static/js/568.b609792f.chunk.js": "/goit-react-hw-08-phonebook/static/js/568.b609792f.chunk.js",
     "static/media/defaulAvatar.png": "/goit-react-hw-08-phonebook/static/media/defaulAvatar.47065ba4cda48a7882dd.png",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-08-phonebook/static/css/main.7acaea2f.css.map",
-    "main.2ddd97dc.js.map": "/goit-react-hw-08-phonebook/static/js/main.2ddd97dc.js.map",
+    "main.be893b78.js.map": "/goit-react-hw-08-phonebook/static/js/main.be893b78.js.map",
     "35.1d41b843.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/35.1d41b843.chunk.js.map",
     "149.74e5681e.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/149.74e5681e.chunk.js.map",
     "178.3fbf4a70.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/178.3fbf4a70.chunk.js.map",
-    "830.101c1b6d.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/830.101c1b6d.chunk.js.map",
+    "830.fe0d3d24.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/830.fe0d3d24.chunk.js.map",
     "568.b609792f.chunk.js.map": "/goit-react-hw-08-phonebook/static/js/568.b609792f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.2ddd97dc.js"
+    "static/js/main.be893b78.js"
   ]
 }
