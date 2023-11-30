@@ -22,8 +22,8 @@ export const App = () => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
 
-    return isRefreshing ? (<b>Loading......</b>) : (
-         <Routes>
+  return isRefreshing ? (<b>Loading......</b>) : (
+    <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
