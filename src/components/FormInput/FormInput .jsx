@@ -1,9 +1,9 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { InputFields, StyledBtn, StyledLabel } from './FormInput.styled';
 import { useDispatch, useSelector } from "react-redux";
-import { addContactThunk } from 'redux/operations';
+import { addContactThunk } from 'redux/contacts/operations';
 import { SubmitSchema } from './FormInput.styled';
-import { getContacts } from 'redux/selectors';
+import { getContacts } from 'redux/contacts/selectors';
    
 export default function FormInput() {
 

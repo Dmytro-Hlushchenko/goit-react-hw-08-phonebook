@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { refreshUserThunk } from "redux/auth/operations";
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
-import { selectIsRefreshing } from "redux/selectors";
+import { selectIsRefreshing } from "redux/auth/selectors";
 import { Layout } from "./Layout";
 import { RestrictedRoute } from "./RestrictedRoute/RestrictedRoute";
 

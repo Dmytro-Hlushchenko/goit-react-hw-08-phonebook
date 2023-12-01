@@ -1,7 +1,7 @@
 
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux"
-import { selectRegistrated } from "redux/selectors"
+import { selectRegistrated } from "redux/auth/selectors"
 
 
 

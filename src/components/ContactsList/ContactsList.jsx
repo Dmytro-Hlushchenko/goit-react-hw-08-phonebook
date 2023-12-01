@@ -1,7 +1,7 @@
-import { getContacts, getError, getFilter, getLoading } from "redux/selectors";
+import { getContacts, getError, getFilter, getLoading } from "redux/contacts/selectors";
 import { StyledContactList, StyledContactItem, StyledDeleteBtn } from "./ContactList.styled"
 import { useSelector, useDispatch } from "react-redux";
-import { deleteContactThunk } from "redux/operations";
+import { deleteContactThunk } from "redux/contacts/operations";
 
 
 export default function ContactsList () {
