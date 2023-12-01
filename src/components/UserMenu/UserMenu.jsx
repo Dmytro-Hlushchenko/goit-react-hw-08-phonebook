@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "redux/selectors";
 import defaultAvatar from "defaulAvatar.png";
-import { logOutUserThunk } from "redux/operations";
+import { logOutUserThunk } from "redux/auth/operations";
 import {ContainerStyled, StyledBtn } from "./UserMenu.styled"
 
 

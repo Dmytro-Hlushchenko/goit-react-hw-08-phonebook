@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import { InputFields, StyledBtn, StyledRegFormLabel } from './RegistrationForm.styled';
 import { SubmitSchema } from './RegistrationForm.styled';
-import { registerUserThunk } from 'redux/operations';
+import { registerUserThunk } from 'redux/auth/operations';
 
 
    

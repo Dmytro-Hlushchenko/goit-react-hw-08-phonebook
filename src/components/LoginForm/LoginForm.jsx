@@ -2,7 +2,7 @@ import { Formik, Field, Form } from 'formik';
 import { InputFields, StyledLoginBtn, StyledLoginFormLabel } from './LoginForm.styled';
 import { SubmitSchema } from './LoginForm.styled';
 import { useDispatch } from 'react-redux';
-import { loginUserThunk } from 'redux/operations';
+import { loginUserThunk } from 'redux/auth/operations';
 
    
 export default function LoginForm() {

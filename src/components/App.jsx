@@ -1,6 +1,6 @@
 import { useEffect, lazy} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { refreshUserThunk } from "redux/operations";
+import { refreshUserThunk } from "redux/auth/operations";
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from "./PrivateRoute/PrivateRoute";
 import { selectIsRefreshing } from "redux/selectors";
