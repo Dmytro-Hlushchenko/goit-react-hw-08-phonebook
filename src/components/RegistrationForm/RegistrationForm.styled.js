@@ -6,7 +6,6 @@ export const InputFields = styled.div`
     flex-direction: column;
     gap: 30px;
     margin-left: 40px;
-   
 `
 
 export const SubmitSchema = Yup.object().shape({
